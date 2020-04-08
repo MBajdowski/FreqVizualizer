@@ -23,7 +23,7 @@ public class Main {
 
         Options options = new Options();
         options.addOption("f", "file", true, "Wav file to generate animation for.");
-        options.addOption("b", "buckets", true, "Frequency buckets for FFT segregation in format \"22,33,44,55...\"");
+        options.addOption("b", "buckets", true, "Number of frequency buckets");
         options.addOption("s", "speed", true, "Desired speed of animation in fps");
         options.addOption("w", "window", true, "Extrema window.");
         options.addOption("d", "drawer", true, "Name of the frame drawer class");
@@ -56,9 +56,7 @@ public class Main {
         File file = new File(cml.getOptionValue("file"));
 
         //FreqBuckets
-        int[] freqBuckets = Arrays.stream(cml.getOptionValue("b",
-                "20,25,32,40,50,63,80,100,126,159,200,252,317,399,502,632,796,1002,1262,1589,2000,2518,3170,3991,5024,6325,7963,10024,12619,15887,20000")
-                .split(",")).mapToInt(Integer::parseInt).toArray();
+        int noFreqBuckets = Integer.parseInt(cml.getOptionValue("b", "10"));
 
         //Fps
         int fps = Integer.parseInt(cml.getOptionValue("s", "8"));
@@ -83,7 +81,7 @@ public class Main {
         }
 
         //Trigger generation
-        FreqVisualiser freqVisualiser = new FreqVisualiser(file, fps, freqBuckets);
+        FreqVisualiser freqVisualiser = new FreqVisualiser(file, fps, noFreqBuckets);
         freqVisualiser.setFrameDrawer(drawer);
         freqVisualiser.setExtremaWindow(extremaWindow);
         freqVisualiser.generate();

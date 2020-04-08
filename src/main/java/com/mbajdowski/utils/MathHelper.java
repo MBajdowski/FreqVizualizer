@@ -6,6 +6,10 @@ import java.util.List;
 
 public class MathHelper {
 
+    private static final double EXP_POW = 0.23;
+    private static final int BIAS = 25;
+    public static final float INDEX_MAX = 29;
+
     public static Complex[] convertToComplexArray(int[] intArr) {
         Complex[] result = new Complex[intArr.length];
         for (int i = 0; i < intArr.length; i++) {
@@ -81,6 +85,24 @@ public class MathHelper {
         }
 
         return new int[]{min, max};
+    }
+
+    public static int calculateExpFunction(float x){
+       return (int)(Math.exp(EXP_POW*x)*BIAS);
+    }
+
+    public static int[] generateFreqBuckets(int noOfIndexes){
+        if(noOfIndexes < 1) {
+            throw new IllegalArgumentException("Number of indexes needs to be grater than 1");
+        }
+        float delta = INDEX_MAX/(noOfIndexes-1);
+        int[] result = new int[noOfIndexes];
+
+        for (int i = 0; i < noOfIndexes; i++) {
+            result[i] = calculateExpFunction(i*delta);
+        }
+
+        return result;
     }
 
     private static int byteToInt(byte... bytes) {

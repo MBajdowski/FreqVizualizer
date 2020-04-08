@@ -5,6 +5,7 @@ import com.mbajdowski.drawer.IFrameDrawer;
 import com.mbajdowski.fft.Complex;
 import com.mbajdowski.fft.InplaceFFT;
 import com.mbajdowski.sound.MusicFileManager;
+import com.mbajdowski.utils.MathHelper;
 import com.mbajdowski.utils.ProgressPrinter;
 import org.jcodec.api.awt.AWTSequenceEncoder;
 
@@ -26,16 +27,16 @@ public class FreqVisualiser {
     private IFrameDrawer frameDrawer;
     private int extremaWindow;
 
-    public FreqVisualiser(File file, int fps, int[] freqBuckets) {
-        this(file, fps, freqBuckets, new ColumnDrawer(), 10);
+    public FreqVisualiser(File file, int fps, int noFreqBuckets) {
+        this(file, fps, noFreqBuckets, new ColumnDrawer(), 10);
     }
 
-    public FreqVisualiser(File file, int fps, int[] freqBuckets, IFrameDrawer frameDrawer, int extremaWindowInSec) {
+    public FreqVisualiser(File file, int fps, int noFreqBuckets, IFrameDrawer frameDrawer, int extremaWindowInSec) {
         this.file = file;
         this.fps = fps;
-        this.freqBuckets = freqBuckets;
         this.frameDrawer = frameDrawer;
         this.extremaWindow = extremaWindowInSec * fps;
+        this.freqBuckets = MathHelper.generateFreqBuckets(noFreqBuckets);
     }
 
     public void setFrameDrawer(IFrameDrawer frameDrawer) {
