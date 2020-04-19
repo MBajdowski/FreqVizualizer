@@ -23,10 +23,10 @@ public class Main {
 
         Options options = new Options();
         options.addOption("f", "file", true, "Wav file to generate animation for.");
-        options.addOption("b", "buckets", true, "Number of frequency buckets");
-        options.addOption("s", "speed", true, "Desired speed of animation in fps");
-        options.addOption("w", "window", true, "Extrema window.");
-        options.addOption("d", "drawer", true, "Name of the frame drawer class");
+        options.addOption("b", "buckets", true, "Number of frequency buckets (default: 10)");
+        options.addOption("s", "speed", true, "Desired speed of animation in fps (default: 8)");
+        options.addOption("w", "window", true, "Time window in which frequency extrema will be generated (default: 10)");
+        options.addOption("d", "drawer", true, "Name of the frame drawer class (default: ColumnDrawer)");
         options.addOption("p", "properties", true, "File with properties for given drawer. Right now ColumnDrawer or LineDrawer are supported.");
         options.addOption("h", "help", false, "Prints help message. If used with -d option provides Drawer Properties");
 
