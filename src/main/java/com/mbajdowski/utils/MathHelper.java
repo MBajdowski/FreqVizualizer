@@ -6,8 +6,8 @@ import java.util.List;
 
 public class MathHelper {
 
-    private static final double EXP_POW = 0.23;
-    private static final int BIAS = 25;
+    public static final double EXP_POW = 0.23;
+    public static final int BIAS = 25;
     public static final float INDEX_MAX = 29;
 
     public static Complex[] convertToComplexArray(int[] intArr) {
@@ -44,22 +44,6 @@ public class MathHelper {
             result = (int) Math.pow(2, ++i);
         }
         return result / 2;
-    }
-
-    public static int[] findExtrema(int[] array) {
-        int max = Integer.MIN_VALUE;
-        int min = Integer.MAX_VALUE;
-
-        for (int value : array) {
-            if (value < min) {
-                min = value;
-            }
-            if (value > max) {
-                max = value;
-            }
-        }
-
-        return new int[]{min, max};
     }
 
     public static int scaleValueToRange(int x, int maxInput, int minInput, int maxOut) {
