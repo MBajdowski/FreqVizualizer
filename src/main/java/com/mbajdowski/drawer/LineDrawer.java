@@ -92,8 +92,8 @@ public class LineDrawer implements IFrameDrawer {
 
             int[] lastPoint = {0, imgHeight};
             for (int i = 0; i < data.length; i++) {
-                int newX = imgWidth / (data.length + 2) * (i + 1);
-                int newY = imgHeight - scaleValueToRange(data[i], extrema[1], extrema[0], imgHeight);
+                int newX = imgWidth / (data.length + 1) * (i + 1);
+                int newY = imgHeight - scaleValueToRange(data[i], extrema[1], extrema[0], imgHeight, 0);
                 int[] newPoint = {newX, newY};
                 g.drawLine(lastPoint[0], lastPoint[1], newPoint[0], newPoint[1]);
                 lastPoint = newPoint;

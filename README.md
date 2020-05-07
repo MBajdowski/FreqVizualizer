@@ -24,7 +24,8 @@ Drawers are classes which will generate images for a given set of frequencies. A
 | Name | Description | Image |
 | --- | --- | --- |
 | **ColumnDrawer** | Allows you to create basic animation where frequencies are represented by column height. | ![Column Drawer Img](https://github.com/MBajdowski/FreqVizualizer/blob/develop/src/main/resources/ColumnDrawer.JPG "Column Drawer") |
-| **LineDrawer** | Allows you to create animation where frequencies are represented by a line|  ![Line Drawer Img](https://github.com/MBajdowski/FreqVizualizer/blob/develop/src/main/resources/LineDrawer.JPG "Line Drawer") |       
+| **LineDrawer** | Allows you to create animation where frequencies are represented by a line|  ![Line Drawer Img](https://github.com/MBajdowski/FreqVizualizer/blob/develop/src/main/resources/LineDrawer.JPG "Line Drawer") |
+| **Grid3dDrawer** | Allows you to create animation where frequencies are drawn on 3d grid|  ![Grid3d Drawer Img](https://github.com/MBajdowski/FreqVizualizer/blob/develop/src/main/resources/Grid3dDrawer.JPG "Grid3d Drawer") |
 
 ## Dependencies
 1. In-place FFT algorithm: https://introcs.cs.princeton.edu/java/97data/InplaceFFT.java.html
@@ -32,7 +33,6 @@ Drawers are classes which will generate images for a given set of frequencies. A
 
 ## ToDo
 * Provide simple UI
-* Provide additional Drawers (3d greed)
 
 ## Licence
 [MIT License](https://github.com/MBajdowski/DataInImage/blob/master/LICENSE.txt)

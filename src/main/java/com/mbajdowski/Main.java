@@ -2,6 +2,7 @@ package com.mbajdowski;
 
 
 import com.mbajdowski.drawer.ColumnDrawer;
+import com.mbajdowski.drawer.Grid3dDrawer;
 import com.mbajdowski.drawer.IFrameDrawer;
 import com.mbajdowski.drawer.LineDrawer;
 import com.mbajdowski.exceptions.NotSupportedDrawerException;
@@ -20,6 +21,7 @@ public class Main {
         Map<String, IFrameDrawer> drawers = new HashMap<>();
         drawers.put(LineDrawer.class.getSimpleName(), new LineDrawer());
         drawers.put(ColumnDrawer.class.getSimpleName(), new ColumnDrawer());
+        drawers.put(Grid3dDrawer.class.getSimpleName(), new Grid3dDrawer());
 
         Options options = new Options();
         options.addOption("f", "file", true, "Wav file to generate animation for.");
@@ -27,7 +29,7 @@ public class Main {
         options.addOption("s", "speed", true, "Desired speed of animation in fps (default: 8)");
         options.addOption("w", "window", true, "Time window in which frequency extrema will be generated (default: 10)");
         options.addOption("d", "drawer", true, "Name of the frame drawer class (default: ColumnDrawer)");
-        options.addOption("p", "properties", true, "File with properties for given drawer. Right now ColumnDrawer or LineDrawer are supported.");
+        options.addOption("p", "properties", true, "File with properties for given drawer. Right now ColumnDrawer, LineDrawer and Grid3dDrawer are supported.");
         options.addOption("h", "help", false, "Prints help message. If used with -d option provides Drawer Properties");
 
         CommandLineParser parser = new DefaultParser();

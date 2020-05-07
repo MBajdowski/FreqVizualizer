@@ -46,10 +46,10 @@ public class MathHelper {
         return result / 2;
     }
 
-    public static int scaleValueToRange(int x, int maxInput, int minInput, int maxOut) {
-        if (x < minInput) return 0;
-        if (x > maxInput) return maxInput;
-        return (int) (maxOut * ((double) x - minInput) / (maxInput - minInput));
+    public static int scaleValueToRange(int x, int maxInput, int minInput, int maxOut, int minOut) {
+        if (x < minInput) return minOut;
+        if (x > maxInput) return maxOut;
+        return (int) (minOut + (maxOut-minOut) * ((double) x - minInput) / (maxInput - minInput));
     }
 
     public static int[] findExtrema(List<int[]> range) {

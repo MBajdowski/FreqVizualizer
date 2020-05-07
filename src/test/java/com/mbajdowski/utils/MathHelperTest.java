@@ -87,7 +87,7 @@ class MathHelperTest {
         int minIn = 0;
         int maxOut = 1000;
 
-        int actual = MathHelper.scaleValueToRange(value, maxIn, minIn, maxOut);
+        int actual = MathHelper.scaleValueToRange(value, maxIn, minIn, maxOut, 0);
 
         assertEquals(100, actual);
     }
@@ -99,7 +99,7 @@ class MathHelperTest {
         int minIn = 0;
         int maxOut = 10;
 
-        int actual = MathHelper.scaleValueToRange(value, maxIn, minIn, maxOut);
+        int actual = MathHelper.scaleValueToRange(value, maxIn, minIn, maxOut, 0);
 
         assertEquals(1, actual);
     }

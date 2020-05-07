@@ -109,7 +109,7 @@ public class ColumnDrawer implements IFrameDrawer {
         Graphics g = imgFrame.getGraphics();
 
         for (int i = 0; i < fftData.length; i++) {
-            int height = scaleValueToRange(fftData[i], extrema[1], extrema[0], maxOut);
+            int height = scaleValueToRange(fftData[i], extrema[1], extrema[0], maxOut, 0);
             int noOfBlocks = Math.min((int) Math.ceil(height / (double) this.blockHeight), noOfBlocksInColumn);
 
             int blockColumnHeight = noOfBlocks * this.blockHeight;
